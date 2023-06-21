@@ -1,10 +1,10 @@
 import "./App.css";
 import Alert from "./components/Alert";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const toggleMode = () => {
@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router basename={process.env.PUBLIC_URL}> */}
         <Navbar
           title="TextiFy"
           mode={mode}
@@ -48,16 +48,17 @@ function App() {
         />
         <Alert alert={alert} />
         <div className="contaier my-3">
-          <Routes>
-            <Route exact path="/about" element={<About />} mode={mode}/>
-            <Route exact path="/" element={<Textform
-                showAlert={showAlert}
-                heading="Try TextiFy - Word Counter, Character Counter, Remove Extra Spaces"
-                mode={mode}
-              />}/>
-          </Routes>
+          {/* <Routes> */}
+            {/* <Route exact path="/about" element={<About />} mode={mode}/> */}
+            {/* <Route exact path="/" element={}/> */}
+        <Textform
+            showAlert={showAlert}
+            heading="Try TextiFy - Word Counter, Character Counter, Remove Extra Spaces"
+            mode={mode}
+          />
+          {/* </Routes> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }

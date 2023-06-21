@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
 
@@ -8,9 +8,9 @@ export default function Navbar(props) {
         <>
         <nav className={`navbar px-2 navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
-                <Link className="navbar-brand text-warning" to="/">
+                <a className="navbar-brand text-warning" href="#">
                    <strong><i>{props.title}</i></strong> 
-                </Link>
+                </a>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -25,15 +25,15 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active text-light" aria-current="page" to="/">
+                            <a className="nav-link active text-light" aria-current="page" href="#">
                                 Home
-                            </Link>
+                            </a>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-light" to="/about">
+                        {/* <li className="nav-item">
+                            <a className="nav-link text-light" href="/about">
                                 About
-                            </Link>
-                        </li>
+                            </a>
+                        </li> */}
                     </ul>
                     {/* <form className="d-flex" role="search">
                         <input
@@ -47,9 +47,9 @@ export default function Navbar(props) {
                         </button>
                     </form> */}
                     <div className={`form-check form-switch text-${props.mode === 'secondary'?'light':'light'}`}>
-                        <input className="form-check-input mt-2" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                        {/* <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.btnText}</label> */}
-                        <img src={`${props.mode === 'secondary'?'moon.png':'brightness.png'}`} height='25px' alt="" />
+                        <input className="form-check-input mt-1" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.btnText}</label>
+                        {/* <img src={`${props.mode === 'secondary'?'moon.png':'brightness.png'}`} height='25px' alt="" /> */}
                     </div>
                 </div>
             </div>
